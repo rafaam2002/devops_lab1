@@ -37,7 +37,12 @@ pipeline {
                             "AWS_SESSION_TOKEN=${ACCESS_TOKEN}",
                             "KUBECONFIG=/var/lib/jenkins/.kube/config"
                         ]) {
-                            sh "echo $AWS_ACCESS_KEY_ID"
+                            sh "echo Conexion a AWS inyectada correctamente"
+                            
+                            // 1. Conectamos Jenkins con el cluster EKS
+                            sh 'aws eks update-kubeconfig --region us-east-1 --name cluster-eks-lab'
+                            
+                            // 2. Comprobamos la version del cluster
                             sh 'kubectl version'
                         }
                     }
