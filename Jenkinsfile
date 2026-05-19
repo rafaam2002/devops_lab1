@@ -17,7 +17,7 @@ pipeline {
                 sh '''
                 echo "Building..."
                 docker build -t TU_USUARIO_DOCKER/flask_app:$TAG .
-                docker tag TU_USUARIO_DOCKER/flask_app:$TAG TU_USUARIO_DOCKER/flask_app:latest
+                docker tag TU_USUARIO_DOCKER/flask_app:$TAG rafaam02/flask_app:latest
                 '''
             }
         }
@@ -27,7 +27,7 @@ pipeline {
                     sh '''
                         echo "Publishing..."
                         docker login -u="${USERNAME}" -p="${PASSWORD}"
-                        docker push TU_USUARIO_DOCKER/flask_app:$TAG
+                        docker push rafaam02/flask_app:$TAG
                     ''' 
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Cleaning..."
-                docker rmi TU_USUARIO_DOCKER/flask_app:$TAG
+                docker rmi rafaam02/flask_app:$TAG
                 ''' 
            }
         }
