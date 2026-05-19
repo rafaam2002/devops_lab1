@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Building..."
-                docker build -t TU_USUARIO_DOCKER/flask_app:$TAG .
+                docker build -t rafaam02/flask_app:$TAG .
                 docker tag rafaam02/flask_app:$TAG rafaam02/flask_app:latest
                 '''
             }
