@@ -6,7 +6,7 @@ pipeline {
         stage("Clone Git Repository") {
             steps {
                 git(
-                    url: "https://github.com/MII-CC-2025/devops_lab1",
+                    url: "https://github.com/rafaam2002/devops_lab1",
                     branch: "main",
                     changelog: true,
                     poll: true
