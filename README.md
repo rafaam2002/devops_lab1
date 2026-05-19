@@ -2,7 +2,7 @@
 
 ## Requisitos
 
-Crea una máquina virtual e instala java y jenkins en ella..
+Crea una máquina virtual e instala java y jenkins en ella.....
 
 ### Instalar Java
 
